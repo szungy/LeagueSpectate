@@ -79,6 +79,9 @@ namespace Spectate
                 return -1D;
             }
 
+            if (conn != null && conn.IsConnected())
+                conn.Disconnect();
+
             return packet.IpBalance;
         }
     }

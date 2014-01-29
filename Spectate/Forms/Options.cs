@@ -38,7 +38,6 @@ namespace Spectate
         {
             if (accountNameTextBox.Text.Length > 0 && passwordTextBox.Text.Length > 0)
             {
-
                 String regionText = regionsComboBox.SelectedItem.ToString();
                 Configuration.SetValue(regionText + "acc", new Account(accountNameTextBox.Text, passwordTextBox.Text, Account.ParseRegionString(regionText)));
                 Configuration.SaveConfiguration();
