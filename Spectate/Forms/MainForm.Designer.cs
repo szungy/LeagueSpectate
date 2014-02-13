@@ -45,12 +45,13 @@
             // 
             // summonerNameTextBox
             // 
-            this.summonerNameTextBox.Location = new System.Drawing.Point(107, 12);
+            this.summonerNameTextBox.Location = new System.Drawing.Point(147, 12);
             this.summonerNameTextBox.MaxLength = 25;
             this.summonerNameTextBox.Name = "summonerNameTextBox";
             this.summonerNameTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.summonerNameTextBox.Size = new System.Drawing.Size(152, 20);
+            this.summonerNameTextBox.Size = new System.Drawing.Size(112, 20);
             this.summonerNameTextBox.TabIndex = 0;
+            this.summonerNameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // summonerNameLabel
             // 

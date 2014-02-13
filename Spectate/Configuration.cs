@@ -56,8 +56,8 @@ namespace Spectate
 
                 // Lets interpret the accounts
                 foreach(Option o in Options)
-                    if (IsAccountConfigOption(o.Name))                    
-                        o.Value = JsonConvert.DeserializeObject<Account>(((JObject)o.Value).ToString());                    
+                    if (IsAccountConfigOption(o.Name))
+                        o.Value = JsonConvert.DeserializeObject<Account>(((JObject)o.Value).ToString());
 
                 if (Configuration.Options == null || Configuration.Options.Count == 0)
                     SetupDefaultConfiguration();
@@ -73,7 +73,7 @@ namespace Spectate
         {            
             string json = JsonConvert.SerializeObject(Configuration.Options, Formatting.Indented);
 
-            using (StreamWriter w = new StreamWriter(file))      
+            using (StreamWriter w = new StreamWriter(file))
                 w.Write(json);
         }
 
