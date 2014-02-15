@@ -32,36 +32,74 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<a name="welcome-to-league-spectate" class="anchor" href="#welcome-to-league-spectate"><span class="octicon octicon-link"></span></a>Welcome to League Spectate</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>League Spectate is a lightweight tool/Graphical frontend written in C#.
+Essentially it enables anyone with a League of Legends client and an acccount in the proper region to get the spectator/observer data for any public game and spectate it right from the League of Legends client. As an extra function you can load "*.bat" files from op.gg/spectate/ and fow.kr (its like a korean lolking). Those crash most of the EU clients in my experience by default but you can load them without any problems with League Spectate.</p>
 
 <h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<ol>
+<li><p>Download .NET 4.5 if you haven't installed it before.
+<a href="http://www.microsoft.com/en-GB/download/details.aspx?id=30653">http://www.microsoft.com/en-GB/download/details.aspx?id=30653</a></p></li>
+<li><p>Download League Spectate (Zip Folder on the top of this page)</p></li>
+<li>The main application is Bin/Spectate.exe</li>
+</ol><p>--- Spectating op.gg / fow.kr ---
+1. Go here <a href="http://www.op.gg/spectate/pro/">http://www.op.gg/spectate/pro/</a>
+2. Choose a game and press the green "Spectate" button
+3. It will download a bat file
+4. Load up League Spectate, open the "Extras" window
+5. Browse from op.gg bat and browse the bat file you just downloaded</p>
+
+<ol>
+<li>Go here <a href="http://fow.kr/">http://fow.kr/</a>
+</li>
+<li>Search for a summoner (You can take "SKT T1 Faker" for example)</li>
+<li>Choose a game and press the green "Play" button</li>
+<li>It will download a bat file</li>
+<li>Load up League Spectate, open the "Extras" window</li>
+<li>Browse from fow.kr bat and browse the bat file you just downloaded</li>
+</ol><h3>
+<a name="frequently-asked-questions" class="anchor" href="#frequently-asked-questions"><span class="octicon octicon-link"></span></a>Frequently Asked Questions</h3>
+
+<p>Q: It does not work, omgomg?!</p>
+
+<p>A: Have you installed .NET 4.5 ? 
+<a href="http://www.microsoft.com/en-GB/download/details.aspx?id=30653">http://www.microsoft.com/en-GB/download/details.aspx?id=30653</a></p>
+
+<p>Q: Do i need LoL replay to use this?</p>
+
+<p>A: No.</p>
+
+<p>Q: When are you going to update it to the latest patch?!</p>
+
+<p>A: As soon as i can.</p>
+
+<p>Q: This is suspicious, i'm pretty sure this program is not safe, is it?</p>
+
+<p>A: It is open source, you can compile all of the libraries and the program yourself.</p>
+
+<p>Q: There are tools like lolnexus and quickfind.kassad.in why would i bother trying a tool like this?</p>
+
+<p>A: First of all if you have League of Legends installed to a different path than default those simply break.
+They are inconvenient and ugly in my opinion, but hey noone forces you to use this.</p>
+
+<p>Q: Something does not work at all or it is partially broken, can you fix it?</p>
+
+<p>A: I'll try my best, feel free to open an issue at the project page.</p>
 
 <h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<a name="authors" class="anchor" href="#authors"><span class="octicon octicon-link"></span></a>Authors</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p><a href="https://github.com/szungy" class="user-mention">@szungy</a> -&gt; <a href="https://github.com/szungy/">https://github.com/szungy/</a></p>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<p>Dependencies:
+James Netwon-King's Json Lib
+<a href="http://james.newtonking.com/json">http://james.newtonking.com/json</a></p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p><a href="https://github.com/DarkActive" class="user-mention">@DarkActive</a>
+Ryan A. LaSarre's PVPNetConnect =&gt; <a href="https://github.com/DarkActive/PVPNetConnect">https://github.com/DarkActive/PVPNetConnect</a></p>
       </section>
     </div>
 
