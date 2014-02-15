@@ -15,36 +15,44 @@ namespace Spectate
     {
         public static async Task<ObserverResult> GetObserverInformation(String Summoner, Account account)
         {
-            PVPNetConnection conn = new PVPNetConnection();
-
             try
             {
-                await Task.Run(() => {
-                    conn.Connect(account.Name, account.Password, Account.GetPVPNetRegion(account.Region), MainForm.GameVersion);
-                });                
+                PVPNetConnection conn = new PVPNetConnection();
+
+                try
+                {
+                    await Task.Run(() =>
+                    {
+                        conn.Connect(account.Name, account.Password, Account.GetPVPNetRegion(account.Region), MainForm.GameVersion);
+                    });
+                }
+                catch
+                {
+                    return new ObserverResult(ObserverResultStatus.ConectionProblem);
+                }
+
+                ((MainForm)MainForm.ActiveForm).StatusUpdate("Connected...");
+
+                PlatformGameLifecycleDTO res = (await conn.RetrieveInProgressSpectatorGameInfo(Summoner));
+
+                if (res.PlayerCredentials == null)
+                    return new ObserverResult(ObserverResultStatus.NotInGame);
+
+                List<String> observerInfos = new List<String>();
+
+                observerInfos.Add(res.PlayerCredentials.ObserverServerIp + ":" + res.PlayerCredentials.ObserverServerPort);
+                observerInfos.Add(res.PlayerCredentials.ObserverEncryptionKey);
+                observerInfos.Add(res.PlayerCredentials.GameId.ToString());
+
+                if (conn != null && conn.IsConnected())
+                    conn.Disconnect();
+
+                return new ObserverResult(ObserverResultStatus.Successful, observerInfos);
             }
             catch
             {
-                return new ObserverResult(ObserverResultStatus.ConectionProblem);
+                return new ObserverResult(ObserverResultStatus.UnknownFail);
             }
-
-            ((MainForm)MainForm.ActiveForm).StatusUpdate("Connected...");
-            
-            PlatformGameLifecycleDTO res = (await conn.RetrieveInProgressSpectatorGameInfo(Summoner));
-
-            if (res.PlayerCredentials == null)
-                return new ObserverResult(ObserverResultStatus.NotInGame);
-
-            List<String> observerInfos = new List<String>();
-
-            observerInfos.Add(res.PlayerCredentials.ObserverServerIp + ":" + res.PlayerCredentials.ObserverServerPort);
-            observerInfos.Add(res.PlayerCredentials.ObserverEncryptionKey);
-            observerInfos.Add(res.PlayerCredentials.GameId.ToString());
-
-            if (conn != null && conn.IsConnected())
-                conn.Disconnect();            
-
-            return new ObserverResult(ObserverResultStatus.Successful, observerInfos);
         }
 
         public static async Task<Double> TestAccount(Account account)
@@ -107,6 +115,7 @@ namespace Spectate
     {
         ConectionProblem,
         NotInGame,
-        Successful
+        Successful,
+        UnknownFail
     }
 }

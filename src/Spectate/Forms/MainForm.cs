@@ -62,6 +62,9 @@ namespace Spectate
                 case ObserverResultStatus.NotInGame:
                     statusInformationLabel.Text = "Not in game";
                     break;
+                case ObserverResultStatus.UnknownFail:
+                    statusInformationLabel.Text = "Unknown fail";
+                    break;
                 case ObserverResultStatus.Successful:
                     statusInformationLabel.Text = "In game";
                     IP = result.ObserverData[0];
