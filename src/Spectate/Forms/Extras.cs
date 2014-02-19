@@ -126,6 +126,8 @@ namespace Spectate
 
                     if (!dataFound)
                         MessageBox.Show("The file was found but there was an error while reading spectator data.");
+                    else if (((Boolean)Configuration.GetValue("deleteBats")) == true)
+                        File.Delete(fileDialog.FileName);
                 }
                 else
                     MessageBox.Show("The file does not exist!");
