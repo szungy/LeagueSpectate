@@ -1,9 +1,11 @@
 LeagueSpectate
 ==============
 
+Usage instructions here: http://szungy.github.io/LeagueSpectate/
+
 League Spectate is a lightweight tool/Graphical frontend written in C#.
 
-Essentially it enables anyone with a League of Legends client and an acccount to the proper region to
+Essentially it enables anyone with a League of Legends client and an acccount in the proper region to
 get the spectator/observer data for any public game and spectate it right from the League of Legends client.
 
 https://github.com/szungy/LeagueSpectate
@@ -30,7 +32,7 @@ A: It is open source, you can compile all of the libraries and the program yours
 Q: There are tools like lolnexus and quickfind.kassad.in why would i bother trying a tool like this?
 
 A: First of all if you have League of Legends installed to a different path than default those simply break.
-   They are inconvenient and ugly in my opinion, but hey noone forces you to use this.
+   They are inconvenient and ugly in my opinion, but hey no one forces you to use this.
    
 Q: Something does not work at all or it is partially broken, can you fix it?
 

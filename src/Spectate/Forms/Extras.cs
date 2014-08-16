@@ -34,7 +34,14 @@ namespace Spectate
             {
                 LoLDir = LoLMainPath + "\\solutions\\lol_game_client_sln\\releases\\";
 
-                DirectoryInfo[] subdirs = new DirectoryInfo(LoLDir).GetDirectories();
+                List<DirectoryInfo> subdirs = new DirectoryInfo(LoLDir).GetDirectories().ToList();
+                List<DirectoryInfo> subdirsCopy = subdirs.ToList();
+
+                foreach (DirectoryInfo t in subdirsCopy)
+                    if (!Util.IsNumericDec(t.Name))
+                        subdirs.Remove(t);
+
+                subdirs = subdirs.ToArray().OrderBy(f => f.LastWriteTime).Reverse().ToList();
                 LoLDir += subdirs[0].Name + "\\deploy\\";
 
                 ExePath = LoLDir + "League of Legends.exe";

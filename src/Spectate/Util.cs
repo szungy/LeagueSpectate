@@ -22,20 +22,32 @@ namespace Spectate
             {
                 LoLDir = registryKey.GetValue("LocalRootFolder").ToString() + "\\solutions\\lol_game_client_sln\\releases\\";
 
-                DirectoryInfo[] subdirs = new DirectoryInfo(LoLDir).GetDirectories();
-                LoLDir += subdirs[0].Name + "\\deploy\\";
+                List<DirectoryInfo> subdirs = new DirectoryInfo(LoLDir).GetDirectories().ToList();
+                List<DirectoryInfo> subdirsCopy = subdirs.ToList();
 
-                path = LoLDir + "League of Legends.exe";
+                foreach (DirectoryInfo t in subdirsCopy)
+                    if (!IsNumericDec(t.Name))
+                        subdirs.Remove(t);
+
+                subdirs = subdirs.ToArray().OrderBy(f => f.LastWriteTime).Reverse().ToList();
+                path = LoLDir.ToString();
+                path += subdirs[0].Name + "\\deploy\\" + "League of Legends.exe";
 
                 found = true;
             }else if (registryKey2 != null && registryKey2.GetValue("LocalRootFolder") != null && registryKey2.GetValue("LocalRootFolder").ToString().Length > 0)
             {
                 LoLDir = registryKey2.GetValue("LocalRootFolder").ToString() + "\\solutions\\lol_game_client_sln\\releases\\";
 
-                DirectoryInfo[] subdirs = new DirectoryInfo(LoLDir).GetDirectories();
-                LoLDir += subdirs[0].Name + "\\deploy\\";
+                List<DirectoryInfo> subdirs = new DirectoryInfo(LoLDir).GetDirectories().ToList();
+                List<DirectoryInfo> subdirsCopy = subdirs.ToList();
 
-                path = LoLDir + "League of Legends.exe";
+                foreach (DirectoryInfo t in subdirsCopy)
+                    if (!IsNumericDec(t.Name))
+                        subdirs.Remove(t);
+
+                subdirs = subdirs.ToArray().OrderBy(f => f.LastWriteTime).Reverse().ToList();
+                path = LoLDir.ToString();
+                path += subdirs[0].Name + "\\deploy\\" + "League of Legends.exe";
 
                 found = true;
             }
@@ -56,7 +68,14 @@ namespace Spectate
             {
                 path = registryKey.GetValue("LocalRootFolder").ToString() + "\\solutions\\lol_game_client_sln\\releases\\";
 
-                DirectoryInfo[] subdirs = new DirectoryInfo(path).GetDirectories();
+                List<DirectoryInfo> subdirs = new DirectoryInfo(path).GetDirectories().ToList();
+                List<DirectoryInfo> subdirsCopy = subdirs.ToList();
+
+                foreach (DirectoryInfo t in subdirsCopy)
+                    if (!IsNumericDec(t.Name))
+                        subdirs.Remove(t);
+
+                subdirs = subdirs.ToArray().OrderBy(f => f.LastWriteTime).Reverse().ToList();
                 path += subdirs[0].Name + "\\deploy\\";
 
                 found = true;
@@ -64,13 +83,29 @@ namespace Spectate
             {
                 path = registryKey2.GetValue("LocalRootFolder").ToString() + "\\solutions\\lol_game_client_sln\\releases\\";
 
-                DirectoryInfo[] subdirs = new DirectoryInfo(path).GetDirectories();
+                List<DirectoryInfo> subdirs = new DirectoryInfo(path).GetDirectories().ToList();
+                List<DirectoryInfo> subdirsCopy = subdirs.ToList();
+
+                foreach (DirectoryInfo t in subdirsCopy)
+                    if (!IsNumericDec(t.Name))
+                        subdirs.Remove(t);
+
+                subdirs = subdirs.ToArray().OrderBy(f => f.LastWriteTime).Reverse().ToList();
                 path += subdirs[0].Name + "\\deploy\\";
 
                 found = true;
             }
 
             return found;
+        }
+
+        public static Boolean IsNumericDec(String s)
+        {
+            for (int i = 0; i < s.Length; i++)
+                if (!(Char.IsNumber(((Char)s[i])) || s[i] == '.'))
+                    return false;
+
+            return true;
         }
     }
 }
