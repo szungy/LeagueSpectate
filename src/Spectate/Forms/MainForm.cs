@@ -20,7 +20,7 @@ namespace Spectate
         public static String IP = "";
         public static String GameID = "";
         
-        public static String GameVersion = "4.14.14.xx";
+        public static String GameVersion = "4.15.14.xx";
 
         public static Options OptionsFormInstance;
         public static MainForm MainFormInstance;
