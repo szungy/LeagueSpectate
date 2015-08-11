@@ -2,9 +2,9 @@
 <html>
 
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="League Spectate : " />
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="League Spectate : ">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -32,20 +32,22 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h3>
-<a name="welcome-to-league-spectate" class="anchor" href="#welcome-to-league-spectate"><span class="octicon octicon-link"></span></a>Welcome to League Spectate</h3>
+<a id="welcome-to-league-spectate" class="anchor" href="#welcome-to-league-spectate" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to League Spectate</h3>
 
 <p>League Spectate is a lightweight tool/Graphical frontend written in C#.
 Essentially it enables anyone with a League of Legends client and an acccount in the proper region to get the spectator/observer data for any public game and spectate it right from the League of Legends client. As an extra function you can load "*.bat" files from op.gg/spectate/ and fow.kr (its like a korean lolking). Those crash most of the EU clients in my experience by default but you can load them without any problems with League Spectate.</p>
 
 <h3>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h3>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h3>
 
 <ol>
 <li><p>Download .NET 4.5 if you haven't installed it before.
 <a href="http://www.microsoft.com/en-GB/download/details.aspx?id=30653">http://www.microsoft.com/en-GB/download/details.aspx?id=30653</a></p></li>
 <li><p>Download League Spectate (Zip Folder on the top of this page)</p></li>
 <li>The main application is Bin/Spectate.exe</li>
-</ol><p>--- Regular spectate SETUP ---</p>
+</ol>
+
+<p>--- Regular spectate SETUP ---</p>
 
 <ol>
 <li>
@@ -58,7 +60,9 @@ Essentially it enables anyone with a League of Legends client and an acccount in
 <li>Load up League Spectate, open the "Options" window</li>
 <li>Add every account you created to the "Account Manager" section.</li>
 <li>You might want to test the connection with the login servers (Check connection button)</li>
-</ol><p>-- Regular spectate AFTER SETUP ---</p>
+</ol>
+
+<p>-- Regular spectate AFTER SETUP ---</p>
 
 <ol>
 <li>Type in a summoner name in the main window</li>
@@ -66,7 +70,9 @@ Essentially it enables anyone with a League of Legends client and an acccount in
 <li>"Check status"</li>
 <li>If the input summoner is in an active public game it will show up in the status message</li>
 <li>You can press the Spectate button now which will load the game up in the League of Legends client</li>
-</ol><p>--- Spectating op.gg / fow.kr ---</p>
+</ol>
+
+<p>--- Spectating op.gg / fow.kr ---</p>
 
 <ol>
 <li>Go here <a href="http://www.op.gg/spectate/pro/">http://www.op.gg/spectate/pro/</a>
@@ -76,7 +82,11 @@ Essentially it enables anyone with a League of Legends client and an acccount in
 <li>Load up League Spectate, open the "Extras" window</li>
 <li>Browse from op.gg bat and browse the bat file you just downloaded</li>
 <li>Press "Lets go"</li>
-</ol><hr><ol>
+</ol>
+
+<hr>
+
+<ol>
 <li>Go here <a href="http://fow.kr/">http://fow.kr/</a>
 </li>
 <li>Search for a summoner (You can take "SKT T1 Faker" for example)</li>
@@ -85,10 +95,12 @@ Essentially it enables anyone with a League of Legends client and an acccount in
 <li>Load up League Spectate, open the "Extras" window</li>
 <li>Browse from fow.kr bat and browse the bat file you just downloaded</li>
 <li>Press "Lets go"</li>
-</ol><h3>
-<a name="frequently-asked-questions" class="anchor" href="#frequently-asked-questions"><span class="octicon octicon-link"></span></a>Frequently Asked Questions</h3>
+</ol>
 
-<p>Q: It does not work, omgomg?!</p>
+<h3>
+<a id="frequently-asked-questions" class="anchor" href="#frequently-asked-questions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Frequently Asked Questions</h3>
+
+<p>Q: It does not work! What could be the problem?</p>
 
 <p>A: Have you installed .NET 4.5 ? 
 <a href="http://www.microsoft.com/en-GB/download/details.aspx?id=30653">http://www.microsoft.com/en-GB/download/details.aspx?id=30653</a></p>
@@ -111,20 +123,20 @@ Essentially it enables anyone with a League of Legends client and an acccount in
 
 <p>Q: There are tools like lolnexus and quickfind.kassad.in why would i bother trying a tool like this?</p>
 
-<p>A: First of all if you have League of Legends installed to a different path than default those simply break.
-They are inconvenient and ugly in my opinion, but hey noone forces you to use this.</p>
+<p>A: If you have League of Legends installed to a different path than default those simply break.
+They are inconvenient to use in my opinion, but hey no one forces you to use this.</p>
 
 <p>Q: Something does not work at all or it is partially broken, can you fix it?</p>
 
 <p>A: I'll try my best, feel free to open an issue at the project page.</p>
 
 <h3>
-<a name="authors" class="anchor" href="#authors"><span class="octicon octicon-link"></span></a>Authors</h3>
+<a id="authors" class="anchor" href="#authors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors</h3>
 
 <p><a href="https://github.com/szungy" class="user-mention">@szungy</a> -&gt; <a href="https://github.com/szungy/">https://github.com/szungy/</a></p>
 
 <p>Dependencies:
-James Netwon-King's Json Lib
+James Newton-King's Json Library
 <a href="http://james.newtonking.com/json">http://james.newtonking.com/json</a></p>
 
 <p><a href="https://github.com/DarkActive" class="user-mention">@DarkActive</a>
@@ -136,7 +148,7 @@ Ryan A. LaSarre's PVPNetConnect =&gt; <a href="https://github.com/DarkActive/PVP
     <div id="footer_wrap" class="outer">
       <footer class="inner">
         <p class="copyright">League Spectate maintained by <a href="https://github.com/szungy">szungy</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
 
